@@ -112,6 +112,10 @@ The authentication micro-frontend also requires the following additional variabl
      - Name of MFE, this will be used by the API to get runtime configurations for the specific micro frontend. For a frontend repo `frontend-app-appName`, use `appName` as APP_ID.
      - ``authn`` | ``''``
 
+   * - ``TPA_UNLINKED_ACCOUNT_PROVISION_URL``
+     - URL to redirect to when the identity provided by third-party authentication is not yet linked to a platform account. This allows for redirecting to a custom sign-up flow handled by an external service to create the linked account. An empty string (the default) disables this feature.
+     - ``http://example.com/signup`` | ``''``
+
 
 edX-specific Environment Variables
 **********************************
