@@ -19,6 +19,7 @@ const configuration = {
   PRIVACY_POLICY: process.env.PRIVACY_POLICY || null,
   TOS_AND_HONOR_CODE: process.env.TOS_AND_HONOR_CODE || null,
   TOS_LINK: process.env.TOS_LINK || null,
+  TPA_UNLINKED_ACCOUNT_PROVISION_URL: process.env.TPA_UNLINKED_ACCOUNT_PROVISION_URL || null,
   // Miscellaneous
   GENERAL_RECOMMENDATIONS: process.env.GENERAL_RECOMMENDATIONS || '[]',
   INFO_EMAIL: process.env.INFO_EMAIL || '',

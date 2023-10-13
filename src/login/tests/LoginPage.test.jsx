@@ -791,4 +791,25 @@ describe('LoginPage', () => {
 
     expect(store.dispatch).toHaveBeenCalledWith(loginRemovePasswordResetBanner());
   });
+
+  it('should redirect to provisioning URL on unlinked third-party auth account', () => {
+    mergeConfig({
+      TPA_UNLINKED_ACCOUNT_PROVISION_URL: 'http://example.com',
+    });
+
+    store = mockStore({
+      ...initialState,
+      commonComponents: {
+        ...initialState.commonComponents,
+        thirdPartyAuthContext: {
+          ...initialState.commonComponents.thirdPartyAuthContext,
+          currentProvider: ssoProvider.name,
+        },
+      },
+    });
+
+    const loginPage = mount(reduxWrapper(<IntlLoginPage {...props} />));
+    expect(window.location.href).toEqual('http://example.com');
+    loginPage.unmount();
+  });
 });
